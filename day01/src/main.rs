@@ -66,6 +66,7 @@ fn run_instructions(instructions: Vec<Instruction>) -> Vec<(i32, i32)> {
             Instruction::L(d) => *d,
         })
         .collect::<Vec<_>>();
+
     let moves = directions
         .iter()
         .zip(distances.iter())
@@ -97,6 +98,6 @@ pub fn main() {
     let input = include_str!("../input.txt");
     let instructions = input.split(", ").map(parse_instruction).collect::<Vec<_>>();
     let moves = run_instructions(instructions.clone());
-    println!("part1: {:?}", shortest_dist(*moves.last().unwrap()));
-    println!("part2: {:?}", shortest_dist(find_duplicate(moves)));
+    println!("part1: {}", shortest_dist(*moves.last().unwrap()));
+    println!("part2: {}", shortest_dist(find_duplicate(moves)));
 }
