@@ -45,6 +45,7 @@ fn main() {
 }
 
 fn valid_triangle(sides: Vec<&u32>) -> bool {
+    assert!(sides.len() == 3);
     let (a, b, c) = (sides[0], sides[1], sides[2]);
     a + b > *c
 }
@@ -56,4 +57,3 @@ pub fn transpose<T: Copy>(v: Vec<Vec<T>>) -> Vec<Vec<T>> {
         .map(|i| v.iter().map(|row| row[i]).collect())
         .collect()
 }
-
