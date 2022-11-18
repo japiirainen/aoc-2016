@@ -45,9 +45,7 @@ fn valid_room(r: &Room) -> bool {
             *counts.entry(c).or_insert(0) += 1;
         }
     }
-    let mut counts = counts
-        .into_iter()
-        .collect::<Vec<_>>();
+    let mut counts = counts.into_iter().collect::<Vec<_>>();
     counts.sort_by(|a, b| b.1.cmp(&a.1).then(a.0.cmp(&b.0)));
     let checksum = counts
         .into_iter()
@@ -57,9 +55,23 @@ fn valid_room(r: &Room) -> bool {
     checksum == r.checksum.clone()
 }
 
+fn decrypt(r: &Room) -> String {
+    r.enc_name
+        .join(" ")
+        .chars()
+        .map(|c| {
+            if c == ' ' {
+                ' '
+            } else {
+                (((c as u8 - b'a') + (r.id % 26) as u8) % 26 + b'a') as char
+            }
+        })
+        .collect::<String>()
+}
+
 fn main() {
     println!(
-        "{:?}",
+        "Part 1: {}",
         include_str!("../input.txt")
             .lines()
             .map(parse_room)
@@ -67,61 +79,14 @@ fn main() {
             .map(|r| r.id)
             .sum::<u32>()
     );
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_parse_room() {
-        assert_eq!(
-            parse_room("aaaaa-bbb-z-y-x-123[abxyz]"),
-            Room {
-                enc_name: vec![
-                    "aaaaa".to_string(),
-                    "bbb".to_string(),
-                    "z".to_string(),
-                    "y".to_string(),
-                    "x".to_string()
-                ],
-                id: 123,
-                checksum: "abxyz".to_string(),
-            }
-        );
-    }
-
-    #[test]
-    fn test_valid_room() {
-        assert_eq!(
-            valid_room(&Room {
-                enc_name: vec![
-                    "aaaaa".to_string(),
-                    "bbb".to_string(),
-                    "z".to_string(),
-                    "y".to_string(),
-                    "x".to_string()
-                ],
-                id: 123,
-                checksum: "abxyz".to_string(),
-            }),
-            true
-        );
-    }
-
-    #[test]
-    fn test_invalid_room() {
-        assert_eq!(
-            valid_room(&Room {
-                enc_name: vec![
-                    "totally".to_string(),
-                    "real".to_string(),
-                    "room".to_string()
-                ],
-                id: 200,
-                checksum: "decoy".to_string(),
-            }),
-            false
-        );
-    }
+    println!(
+        "Part 2: {}",
+        include_str!("../input.txt")
+            .lines()
+            .map(parse_room)
+            .filter(valid_room)
+            .find(|r| decrypt(r) == "northpole object storage")
+            .map(|r| r.id)
+            .unwrap()
+    );
 }
