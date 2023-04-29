@@ -21,6 +21,6 @@ All days are runnable via `make`.
 cd day<xx> && make run
 ```
 
-| Day | Language |
-| --- | -------- |
-| 01  | Java     |
+| Day | Language | Link            |
+| --- | -------- | --------------- |
+| 01  | Java     | [link](./day01) |
