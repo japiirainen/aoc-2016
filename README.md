@@ -12,3 +12,15 @@ Language ideas:
 - Common Lisp
 - Standard ML
 - Kotlin
+
+## Running
+
+All days are runnable via `make`.
+
+```sh
+cd day<xx> && make run
+```
+
+| Day | Language |
+| --- | -------- |
+| 01  | Java     |
