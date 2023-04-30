@@ -6,9 +6,7 @@
 
 (defun read-moves (fp)
   (with-open-file (stream fp)
-    (loop for line = (read-line stream nil)
-          while line
-          collect line)))
+    (loop for line = (read-line stream nil) while line collect line)))
 
 (defvar pad1 #2A((1 2 3)
                  (4 5 6)
@@ -47,12 +45,11 @@
 
 (defun solve-file (fp)
   (let ((moves (read-moves fp)))
-    (let ((p1 (reduce (lambda (acc cur) (simulate-move acc cur pad1)) moves :initial-value "")))
-      (reset-pos! '(2 0))
-      (let ((p2 (reduce (lambda (acc cur) (simulate-move acc cur pad2)) moves :initial-value "")))
-        (format t "Solving for file : ~A~%" fp)
-        (format t "part 1: ~A~%" p1)
-        (format t "part 2: ~A~%" p2)))))
+    (defun solve (pad) (reduce (lambda (acc cur) (simulate-move acc cur pad)) moves :initial-value ""))
+    (format t "Solving for file : ~A~%" fp)
+    (format t "part 1: ~A~%" (solve pad1))
+    (reset-pos! '(2 0))
+    (format t "part 2: ~A~%" (solve pad2))))
 
 (defun main ()
   (let ((args (uiop:command-line-arguments)))
