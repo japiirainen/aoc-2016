@@ -12,6 +12,9 @@ Language ideas:
 - Common Lisp
 - Standard ML
 - Kotlin
+- Clojure via babashka
+- Haskell
+- C
 
 ## Running
 
@@ -21,6 +24,7 @@ All days are runnable via `make`.
 cd day<xx> && make run
 ```
 
-| Day | Language | Link            |
-| --- | -------- | --------------- |
-| 01  | Java     | [link](./day01) |
+| Day | Language    | Link            |
+| --- | ----------- | --------------- |
+| 01  | Java        | [link](./day01) |
+| 02  | Common Lisp | [link](./day02) |
