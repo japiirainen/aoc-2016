@@ -1,4 +1,4 @@
-inputs=sample.txt input.txt
+INPUTS=sample.txt input.txt
 
 run:
-	sbcl --script main.lisp $(inputs)
+	sbcl --script main.lisp $(INPUTS)
