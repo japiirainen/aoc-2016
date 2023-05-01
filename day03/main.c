@@ -6,7 +6,7 @@
 #define MAX_LINES (1024)*5
 #define MAX_LINE_LEN 1024
 
-void read_lines(const char *file_path, int *line_count, char buffer[MAX_LINES][MAX_LINE_LEN]) {
+void read_lines(const char *file_path, int *line_count, char buffer[][MAX_LINE_LEN]) {
     FILE *fp;
     fp = fopen(file_path, "r");
 
@@ -31,7 +31,7 @@ bool valid_triangle(int x, int y, int z) {
     return x + y > z && y + z > x && z + x > y;
 }
 
-int part_1(int line_count, char lines[MAX_LINES][MAX_LINE_LEN]) {
+int part_1(int line_count, char lines[][MAX_LINE_LEN]) {
     int valid_triangles = 0;
     for (int i = 0; i < line_count; i++) {
         Triangle t = {0};
@@ -41,7 +41,7 @@ int part_1(int line_count, char lines[MAX_LINES][MAX_LINE_LEN]) {
     return valid_triangles;
 }
 
-int part_2(int line_count, char lines[MAX_LINES][MAX_LINE_LEN]) {
+int part_2(int line_count, char lines[][MAX_LINE_LEN]) {
     int valid_triangles = 0;
     for (int i = 0; i < line_count; i += 3) {
         Triangle t0, t1, t2 = {0};
