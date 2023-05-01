@@ -28,3 +28,4 @@ cd day<xx> && make run
 | --- | ----------- | --------------- |
 | 01  | Java        | [link](./day01) |
 | 02  | Common Lisp | [link](./day02) |
+| 03  | C           | [link](./day03) |
