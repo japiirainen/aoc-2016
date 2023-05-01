@@ -5,16 +5,16 @@ Advent of code 2016 solutions. I'm planning to complete each problem in a differ
 In particular I'd like to also use languages that are not yet familiar to me.
 
 Language ideas:
-- Java
+- <s>Java</s>
 - Racket
 - Zig
 - Agda
-- Common Lisp
+- <s>Common Lisp</s>
 - Standard ML
 - Kotlin
 - Clojure via babashka
 - Haskell
-- C
+- <s>C</s>
 
 ## Running
 
