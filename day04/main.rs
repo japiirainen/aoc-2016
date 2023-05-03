@@ -53,12 +53,37 @@ fn is_room_valid(r: &Room) -> bool {
     checksum == r.checksum.clone()
 }
 
+fn decrypt(r: &Room) -> String {
+    r.name
+       .join(" ")
+       .chars()
+       .map(|c| {
+           if c == ' ' {
+               ' '
+           } else {
+               (((c as u8 - b'a') + (r.id % 26) as u8) % 26 + b'a') as char
+           }
+       })
+       .collect::<String>()
+}
+
 fn solve_file(file_path: &str) -> () {
     println!("Solving for file : {}", file_path);
-    let contents = fs::read_to_string(file_path).expect(format!("Failed to read file : {}", file_path).as_str());
+    let contents = fs::read_to_string(file_path)
+        .expect(format!("Failed to read file : {}", file_path).as_str());
     println!(
         "part 1 : {}",
         contents.lines().map(parse_room).filter(is_room_valid).map(|r| r.id).sum::<u32>()
+    );
+    println!(
+        "part 2 : {}",
+        contents
+          .lines()
+          .map(parse_room)
+          .filter(is_room_valid)
+          .filter(|r| decrypt(r) == "northpole object storage")
+          .map(|r| r.id)
+          .sum::<u32>()
     )
 }
 
