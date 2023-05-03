@@ -1,10 +1,10 @@
-INPUTS=sample.txt
+INPUTS=sample.txt input.txt
 
-build: main.zig
-	zig build-exe main.zig
+build: main.rs
+	rustc main.rs
 
 run: build
 	./main $(INPUTS)
 
 clean:
-	rm main *.o
+	rm main
