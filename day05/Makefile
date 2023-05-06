@@ -3,3 +3,6 @@ build: main.zig
 
 run: build
 	./main
+
+clean:
+	rm main *.o
