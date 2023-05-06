@@ -7,7 +7,7 @@ In particular I'd like to also use languages that are not yet familiar to me.
 Language ideas:
 - <s>Java</s>
 - Racket
-- Zig
+- <s>Zig</s>
 - Agda
 - <s>Common Lisp</s>
 - Standard ML
@@ -16,6 +16,10 @@ Language ideas:
 - Haskell
 - <s>C</s>
 - <s>Rust</s>
+- Scala
+- Ruby
+- Ocaml
+- Scheme
 
 ## Running
 
