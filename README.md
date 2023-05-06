@@ -30,4 +30,5 @@ cd day<xx> && make run
 | 01  | Java        | [link](./day01) |
 | 02  | Common Lisp | [link](./day02) |
 | 03  | C           | [link](./day03) |
-| 03  | Rust        | [link](./day04) |
+| 04  | Rust        | [link](./day04) |
+| 05  | Zig         | [link](./day05) |
