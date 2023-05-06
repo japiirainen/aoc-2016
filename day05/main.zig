@@ -13,7 +13,7 @@ fn part1(allocator: std.mem.Allocator, input: []const u8, debug: bool) ![]u8 {
     var password: []u8 = "";
 
     var i: i64 = 0;
-    while (i < 100_000_000) : (i += 1) {
+    while (i < 100_000_000_000_000) : (i += 1) {
         var x: [std.crypto.hash.Md5.digest_length]u8 = undefined;
         var pw = input;
         _ = try join(allocator, &pw, i, "{d}");
@@ -55,7 +55,7 @@ fn part2(allocator: std.mem.Allocator, input: []const u8, debug: bool) ![8:0]u8 
             var idx = try std.fmt.allocPrint(allocator, "{c}", .{hex[5]});
             var index = try std.fmt.parseInt(usize, idx, 16);
 
-            if (index < @as(u8, 8)) {
+            if (index < 8) {
                 var atIdx = try std.fmt.allocPrint(allocator, "{c}", .{password[index]});
                 if (std.mem.eql(u8, atIdx, "?"))
                     password[index] = hex[6];
