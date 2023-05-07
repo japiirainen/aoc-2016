@@ -9,7 +9,7 @@ Language ideas:
 - <s>JavaScript</s>
 - Racket
 - <s>Zig</s>
-- Agda
+- <s>Agda</s>
 - <s>Common Lisp</s>
 - Standard ML
 - Kotlin
