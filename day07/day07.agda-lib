@@ -1,0 +1,4 @@
+name: day07
+include: .
+depend: standard-library
+flags: --guardedness
