@@ -21,6 +21,8 @@ Language ideas:
 - Ruby
 - Ocaml
 - Scheme
+- Coq
+- lean4
 
 ## Running
 
@@ -36,7 +38,6 @@ cd day<xx> && make run
 | 02  | Common Lisp | [link](./day02) |
 | 03  | C           | [link](./day03) |
 | 04  | Rust        | [link](./day04) |
-| 05  | Zig         | [link](./day05) |
 | 05  | Zig         | [link](./day05) |
 | 06  | JavaScript  | [link](./day06) |
 | 07  | Agda        | [link](./day07) |
