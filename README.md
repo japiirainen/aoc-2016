@@ -39,3 +39,4 @@ cd day<xx> && make run
 | 05  | Zig         | [link](./day05) |
 | 05  | Zig         | [link](./day05) |
 | 06  | JavaScript  | [link](./day06) |
+| 07  | Agda        | [link](./day07) |
