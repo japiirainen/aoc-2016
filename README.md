@@ -17,6 +17,7 @@ Language ideas:
 - Haskell
 - <s>C</s>
 - <s>Rust</s>
+- <s>Julia</s>
 - Scala
 - Ruby
 - Ocaml
@@ -41,3 +42,4 @@ cd day<xx> && make run
 | 05  | Zig         | [link](./day05) |
 | 06  | JavaScript  | [link](./day06) |
 | 07  | Agda        | [link](./day07) |
+| 08  | Julia       | [link](./day08) |
