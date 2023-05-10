@@ -18,6 +18,7 @@ Language ideas:
 - <s>C</s>
 - <s>Rust</s>
 - <s>Julia</s>
+- <s>F#</s>
 - Scala
 - Ruby
 - Ocaml
@@ -43,3 +44,4 @@ cd day<xx> && make run
 | 06  | JavaScript  | [link](./day06) |
 | 07  | Agda        | [link](./day07) |
 | 08  | Julia       | [link](./day08) |
+| 09  | F#          | [link](./day09) |
