@@ -25,8 +25,9 @@ Language ideas:
 - Ruby
 - Ocaml
 - Scheme
-- Coq
 - lean4
+- TypeScript
+- Elixir
 
 ## Running
 
@@ -49,3 +50,4 @@ cd day<xx> && make run
 | 09  | F#          | [link](./day09) |
 | 10  | C#          | [link](./day10) |
 | 11  | C++         | [link](./day11) |
+
