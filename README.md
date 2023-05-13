@@ -16,6 +16,7 @@ Language ideas:
 - Clojure via babashka
 - Haskell
 - <s>C</s>
+- <s>C++</s>
 - <s>Rust</s>
 - <s>Julia</s>
 - <s>F#</s>
@@ -47,3 +48,4 @@ cd day<xx> && make run
 | 08  | Julia       | [link](./day08) |
 | 09  | F#          | [link](./day09) |
 | 10  | C#          | [link](./day10) |
+| 11  | C++         | [link](./day11) |
