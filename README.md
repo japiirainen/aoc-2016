@@ -7,20 +7,20 @@ In particular I'd like to also use languages that are not yet familiar to me.
 Language ideas:
 - <s>Java</s>
 - <s>JavaScript</s>
-- Racket
 - <s>Zig</s>
 - <s>Agda</s>
 - <s>Common Lisp</s>
-- Standard ML
-- Kotlin
-- Clojure via babashka
-- Haskell
 - <s>C</s>
 - <s>C++</s>
 - <s>Rust</s>
 - <s>Julia</s>
 - <s>F#</s>
 - <s>C#</s>
+- Racket
+- Standard ML
+- Kotlin
+- Clojure via babashka
+- Haskell
 - Scala
 - Ruby
 - Ocaml
@@ -28,6 +28,8 @@ Language ideas:
 - lean4
 - TypeScript
 - Elixir
+- Python
+- PureScript
 
 ## Running
 
