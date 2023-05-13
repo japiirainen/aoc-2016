@@ -52,4 +52,5 @@ cd day<xx> && make run
 | 09  | F#          | [link](./day09) |
 | 10  | C#          | [link](./day10) |
 | 11  | C++         | [link](./day11) |
+| 12  | PureScript  | [link](./day12) |
 
