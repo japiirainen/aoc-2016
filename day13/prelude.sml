@@ -34,8 +34,9 @@ signature QUEUE =
     type 'a queue = 'a list * 'a list
     exception Empty
     val empty : 'a queue
-    val insert : 'a * 'a queue -> 'a queue
+    val insert : 'a -> 'a queue -> 'a queue
     val remove : 'a queue -> 'a * 'a queue
+    val addList : 'a list -> 'a queue -> 'a queue
   end
 
 structure Queue : QUEUE =
@@ -43,10 +44,12 @@ structure Queue : QUEUE =
    type 'a queue = 'a list * 'a list
    exception Empty
    val empty = (nil, nil)
-   fun insert (x, (b, f)) = (x::b, f)
+   fun insert x (b, f) = (x::b, f)
    fun remove (nil, nil) = raise Empty
      | remove (bs, nil) = remove (nil, rev bs)
      | remove (bs, f::fs) = (f, (bs, fs))
+   fun addList is q =
+     List.foldl (fn (x, queue) => insert x queue) q is
  end
 
 datatype order = LT | GT | EQ
@@ -183,7 +186,21 @@ functor SearchFun
     SEARCH where type Rep.t = O.t =
   struct
     structure Rep : ORDERED = O
-    fun bfsOn rep suc init =
-      (* TODO: this is going to need some sort of queue and set datatypes *)
-      nil
+    structure S : SET = SetFun(O)
+    structure Q : QUEUE = Queue
+
+    fun bfsOn rep next start = let
+      fun loop seen queue = (let
+        val (x, q) = Q.remove queue
+        val r = rep x
+        val seen' = S.add r seen
+        val q' = Q.addList (next x) q
+      in
+        if (S.member r seen)
+        then loop seen q
+        else x :: loop seen' q'
+      end) handle Q.Empty => []
+    in
+      loop S.empty (Q.addList start Q.empty)
+    end
   end
