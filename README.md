@@ -17,7 +17,7 @@ Language ideas:
 - <s>F#</s>
 - <s>C#</s>
 - Racket
-- Standard ML
+- <s>Standard ML</s>
 - Kotlin
 - Clojure via babashka
 - Haskell
@@ -53,4 +53,5 @@ cd day<xx> && make run
 | 10  | C#          | [link](./day10) |
 | 11  | C++         | [link](./day11) |
 | 12  | PureScript  | [link](./day12) |
+| 13  | Standard ML | [link](./day13) |
 
