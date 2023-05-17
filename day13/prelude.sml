@@ -16,6 +16,10 @@ signature PRELUDE =
 
     val iter : ('a -> unit) -> 'a list -> unit
     val $ : ('a -> 'b) * 'a -> 'b
+    val dec2bin : int -> int list
+    val popCount : int list -> int
+    val takeWhile : ('a -> bool) -> 'a list -> 'a list
+    val even : int -> bool
   end
 
 structure Prelude : PRELUDE =
@@ -27,27 +31,35 @@ structure Prelude : PRELUDE =
 
     fun iter f xs = let val _ =  map f xs in () end
     fun f $ a = f a
+    fun dec2bin x = if x <= 1 then [x] else dec2bin (x div 2) @ [(x mod 2)]
+    fun popCount bin = List.length (List.filter (fn x => x = 1) bin)
+    fun takeWhile pred ys = let
+      fun go p [] acc = acc
+        | go p (x::xs) acc =
+        if p x then go p xs (x :: acc) else acc
+    in
+      go pred ys []
+    end
+    fun even n = n mod 2 = 0
   end
 
 signature QUEUE =
   sig
     type 'a queue = 'a list * 'a list
-    exception Empty
     val empty : 'a queue
     val insert : 'a -> 'a queue -> 'a queue
-    val remove : 'a queue -> 'a * 'a queue
+    val remove : 'a queue -> ('a * 'a queue) option
     val addList : 'a list -> 'a queue -> 'a queue
   end
 
 structure Queue : QUEUE =
  struct
    type 'a queue = 'a list * 'a list
-   exception Empty
    val empty = (nil, nil)
    fun insert x (b, f) = (x::b, f)
-   fun remove (nil, nil) = raise Empty
-     | remove (bs, nil) = remove (nil, rev bs)
-     | remove (bs, f::fs) = (f, (bs, fs))
+   fun remove (nil, nil) = NONE
+     | remove (bs, nil) = (remove (nil, rev bs))
+     | remove (bs, f::fs) = SOME (f, (bs, fs))
    fun addList is q =
      List.foldl (fn (x, queue) => insert x queue) q is
  end
@@ -72,6 +84,18 @@ structure IntOrd : ORDERED =
   struct
     type t = int
     fun compare a b = if a > b then GT else (if a < b then LT else EQ)
+  end
+
+
+structure IntTupleOrd : ORDERED =
+  struct
+    type t = int * int
+    fun compare (a0, a1) (b0, b1) = let
+      val r0 = IntOrd.compare a0 b0
+      val r1 = IntOrd.compare a1 b1
+    in
+      if r0 = EQ then r1 else r0
+    end
   end
 
 structure ShowInt : SHOW =
@@ -190,16 +214,17 @@ functor SearchFun
     structure Q : QUEUE = Queue
 
     fun bfsOn rep next start = let
-      fun loop seen queue = (let
-        val (x, q) = Q.remove queue
+      fun loop seen queue = (case Q.remove queue of
+         NONE => []
+       | SOME (x, q) => (let
         val r = rep x
         val seen' = S.add r seen
         val q' = Q.addList (next x) q
-      in
-        if (S.member r seen)
-        then loop seen q
-        else x :: loop seen' q'
-      end) handle Q.Empty => []
+        in
+          if S.member r seen
+          then loop seen q
+          else x :: loop seen' q'
+        end))
     in
       loop S.empty (Q.addList start Q.empty)
     end

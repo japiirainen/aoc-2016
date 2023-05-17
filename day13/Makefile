@@ -1,4 +1,4 @@
-INPUTS=sample.txt
+INPUTS=input.txt
 
 build: main.mlb main.sml
 	mlton main.mlb
