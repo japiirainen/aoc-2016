@@ -20,9 +20,9 @@ Language ideas:
 - <s>Elixir</s>
 - <s>Python</s>
 - <s>PureScript</s>
+- <s>Clojure via babashka</s>
 - Racket
 - Kotlin
-- Clojure via babashka
 - Haskell
 - Scala
 - Ruby
@@ -56,4 +56,5 @@ cd day<xx> && make run
 | 13  | Standard ML | [link](./day13) |
 | 14  | Python      | [link](./day14) |
 | 15  | Elixir      | [link](./day15) |
+| 16  | Clojure     | [link](./day16) |
 
