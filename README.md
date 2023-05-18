@@ -16,8 +16,11 @@ Language ideas:
 - <s>Julia</s>
 - <s>F#</s>
 - <s>C#</s>
-- Racket
 - <s>Standard ML</s>
+- <s>Elixir</s>
+- <s>Python</s>
+- <s>PureScript</s>
+- Racket
 - Kotlin
 - Clojure via babashka
 - Haskell
@@ -27,9 +30,6 @@ Language ideas:
 - Scheme
 - lean4
 - TypeScript
-- Elixir
-- <s>Python</s>
-- <s>PureScript</s>
 
 ## Running
 
@@ -55,4 +55,5 @@ cd day<xx> && make run
 | 12  | PureScript  | [link](./day12) |
 | 13  | Standard ML | [link](./day13) |
 | 14  | Python      | [link](./day14) |
+| 15  | Elixir      | [link](./day15) |
 
