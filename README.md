@@ -28,8 +28,8 @@ Language ideas:
 - lean4
 - TypeScript
 - Elixir
-- Python
-- PureScript
+- <s>Python</s>
+- <s>PureScript</s>
 
 ## Running
 
@@ -54,4 +54,5 @@ cd day<xx> && make run
 | 11  | C++         | [link](./day11) |
 | 12  | PureScript  | [link](./day12) |
 | 13  | Standard ML | [link](./day13) |
+| 14  | Python      | [link](./day14) |
 
