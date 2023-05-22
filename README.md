@@ -22,7 +22,7 @@ Language ideas:
 - <s>PureScript</s>
 - <s>Clojure via babashka</s>
 - <s>Kotlin</s>
-- Racket
+- <s>Racket</s>
 - Haskell
 - Scala
 - Ruby
@@ -58,4 +58,5 @@ cd day<xx> && make run
 | 15  | Elixir      | [link](./day15) |
 | 16  | Clojure     | [link](./day16) |
 | 17  | Kotlin      | [link](./day17) |
+| 18  | Racket      | [link](./day18) |
 
