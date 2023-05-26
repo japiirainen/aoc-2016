@@ -59,5 +59,5 @@ cd day<xx> && make run
 | 16  | Clojure     | [link](./day16) |
 | 17  | Kotlin      | [link](./day17) |
 | 18  | Racket      | [link](./day18) |
-| 20  | Go          | [link](./day19) |
+| 19  | Go          | [link](./day19) |
 
