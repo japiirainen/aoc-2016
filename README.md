@@ -23,9 +23,9 @@ Language ideas:
 - <s>Clojure via babashka</s>
 - <s>Kotlin</s>
 - <s>Racket</s>
+- <s>Ruby</s>
 - Haskell
 - Scala
-- Ruby
 - Ocaml
 - Scheme
 - lean4
