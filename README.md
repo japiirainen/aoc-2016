@@ -60,4 +60,5 @@ cd day<xx> && make run
 | 17  | Kotlin      | [link](./day17) |
 | 18  | Racket      | [link](./day18) |
 | 19  | Go          | [link](./day19) |
+| 20  | Ruby        | [link](./day20) |
 
