@@ -25,8 +25,8 @@ Language ideas:
 - <s>Racket</s>
 - <s>Ruby</s>
 - <s>TypeScript</s>
+- <s>Scala</s>
 - Haskell
-- Scala
 - Ocaml
 - Scheme
 - lean4
@@ -62,4 +62,5 @@ cd day<xx> && make run
 | 19  | Go          | [link](./day19) |
 | 20  | Ruby        | [link](./day20) |
 | 21  | TypeScript  | [link](./day21) |
+| 22  | Scala       | [link](./day22) |
 
