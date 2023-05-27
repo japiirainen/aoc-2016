@@ -59,9 +59,6 @@ function parseOperation(s: string): Operation {
     throw new Error('Unreachable')
 }
 
-const swapLetter = (pw: string, x: string, y: string): string =>
-    pw.split('').map(c => c === x ? y : c === y ? x : c).join('')
-
 function rotateLeft(pw: string, x: number): string {
     const n = x % pw.length
     const cs = pw.split('')
