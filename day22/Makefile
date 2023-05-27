@@ -1,4 +1,4 @@
-INPUTS=input.txt
+INPUTS=sample.txt input.txt
 
 run: main.scala
 	scala-cli run main.scala -- $(INPUTS)
