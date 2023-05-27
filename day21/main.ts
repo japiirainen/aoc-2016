@@ -24,10 +24,6 @@ function scramble(pw: string, op: Operation): string {
     }
 }
 
-type OpKind
-  = 'RotateRight'
-  | 'RotateLeft'
-
 type Operation
   = {kind: 'RotateRight', x: number}
   | {kind: 'RotateLeft', x: number}
