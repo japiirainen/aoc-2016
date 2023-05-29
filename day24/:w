@@ -1,0 +1,35 @@
+import Foundation
+
+func solveFile(filePath: String) -> () {
+    print("Solving for file : \(filePath)")
+
+    let contents = (try! String(contentsOfFile: filePath))
+        .trimmingCharacters(in: .whitespacesAndNewlines)
+
+    let targets = Array(contents)
+        .flatMap { c in
+            let i: Int? = Int(String(c))
+            return i == nil ? [] : [i!] }
+
+    let lines = contents.split(separator: "\n")
+
+    let maze = lines
+        .enumerated()
+        .map { (row, xs) in
+            Array(xs)
+                .enumerated()
+                .map { (col, y) in ((row, col), String(y)) } }
+
+    let start = maze
+        .flatten()
+        .first { (_, e) in e == "0" }
+        .map { (c, _) in c }!
+
+    print("start = \(start)")
+    print("targets = \(targets)")
+    print("maze = \(maze)")
+}
+
+for fp in CommandLine.arguments[1...] {
+    solveFile(filePath: fp)
+}
