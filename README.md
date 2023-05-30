@@ -40,3 +40,4 @@ cd day<xx> && make run
 | 24  | Swift       | [link](./day24) |
 | 25  | Haskell     | [link](./day25) |
 
+<img width="647" alt="Screenshot 2023-05-30 at 20 59 05" src="https://github.com/japiirainen/aoc-2016/assets/61139818/a054073a-65f6-4bc1-8de1-89842cd858b2">
