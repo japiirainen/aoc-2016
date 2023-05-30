@@ -7,7 +7,6 @@ func bfsOn<A, R: Hashable>(rep: @escaping (A) -> R,
         var seen: Set<R> = []
         var q: Array<A> = [ini]
         while q.count > 0 {
-            if q.count == 0 { return nil }
             let x = q.last!
             if done(x) { return x }
             q.removeLast()
