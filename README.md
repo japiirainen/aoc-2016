@@ -4,34 +4,6 @@ Advent of code 2016 solutions. I'm planning to complete each problem in a differ
 
 In particular I'd like to also use languages that are not yet familiar to me.
 
-Language ideas:
-- <s>Java</s>
-- <s>JavaScript</s>
-- <s>Zig</s>
-- <s>Agda</s>
-- <s>Common Lisp</s>
-- <s>C</s>
-- <s>C++</s>
-- <s>Rust</s>
-- <s>Julia</s>
-- <s>F#</s>
-- <s>C#</s>
-- <s>Standard ML</s>
-- <s>Elixir</s>
-- <s>Python</s>
-- <s>PureScript</s>
-- <s>Clojure via babashka</s>
-- <s>Kotlin</s>
-- <s>Racket</s>
-- <s>Ruby</s>
-- <s>TypeScript</s>
-- <s>Scala</s>
-- <s>Ocaml</s>
-- <s>Swift</s>
-- Haskell
-- Scheme
-- lean4
-
 ## Running
 
 All days are runnable via `make`.
@@ -66,4 +38,5 @@ cd day<xx> && make run
 | 22  | Scala       | [link](./day22) |
 | 23  | Ocaml       | [link](./day23) |
 | 24  | Swift       | [link](./day24) |
+| 25  | Haskell     | [link](./day25) |
 
