@@ -4,8 +4,6 @@ Advent of code 2016 solutions. I'm planning to complete each problem in a differ
 
 <img width="647" alt="Screenshot 2023-05-30 at 20 59 05" src="https://github.com/japiirainen/aoc-2016/assets/61139818/a054073a-65f6-4bc1-8de1-89842cd858b2">
 
-In particular I'd like to also use languages that are not yet familiar to me.
-
 ## Running
 
 All days are runnable via `make`.
